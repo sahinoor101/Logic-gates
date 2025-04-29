@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logic diagram</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      h1 {
+        text-align: center;
+        margin: 20px 0;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 3rem;
+        color: #333;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+      .display {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        flex-wrap: wrap;
+      }
+      body {
+        background-color: ivory;
+      }
+      .button {
+        width: 80px;
+        height: 80px;
+        background-color: green;
+        border-radius: 50%;
+        box-shadow: 4px -4px 5px rgba(0, 0, 0, 0.5);
+      }
+      .wire {
+        width: 200px;
+        height: 2px;
+        background-color: #5C5D5D;
+        border-bottom: 2px soid #5C5D5D;
+      }
+      .gate {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(206, 205, 205);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .light {
+        width: 30px;
+        height: 30px;
+        background-color: red;
+        border-radius: 50%;
+        box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.5);
+      }
+      .buttonHolder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 90px;
+        height: 90px;
+        background-color: grey;
+        border-radius: 50%;
+        box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+      }
+      .lightholder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background-color: grey;
+        border-radius: 50%;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+      }
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+      .line {
+        width: 100px;
+        height: 2px;
+        border-bottom: 2px solid #5C5D5D;
+        position: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>NOT GATE</h1>
+    <div class="display">
+      <div class="buttonHolder">
+        <div class="button"></div>
+      </div>
+      <div class="wire"></div>
+      <div class="gate">
+        <div class="line"></div>
+        <img src="not-gate-icon-image-vector-50434610.jpg" alt="not gate" />
+      </div>
+      <div class="wire"></div>
+      <div class="lightholder">
+        <div class="light"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const button = document.querySelector(".button");
+    const light = document.querySelector(".light");
+    const gate = document.querySelector(".gate");
+
+    button.addEventListener("click", () => {
+      if (button.style.backgroundColor === "red") {
+        light.style.backgroundColor = "red";
+        button.style.backgroundColor = "green";
+      } else {
+        light.style.backgroundColor = "green";
+        button.style.backgroundColor = "red";
+      }
+    });
+  </script>
+</html>
